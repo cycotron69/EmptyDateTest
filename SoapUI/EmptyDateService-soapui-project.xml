@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c1d8366a-5aa3-4ccd-a4b8-af4a09afe97e" activeEnvironment="Default" name="EmptyDateService" resourceRoot="${projectDir}" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="005dc7a0-59e9-4b0b-a432-14c5efd36115" wsaVersion="NONE" name="EmptyDateServiceSOAP" type="wsdl" bindingName="{http://www.example.org/EmptyDateService/}EmptyDateServiceSOAP" soapVersion="1_1" anonymous="optional" definition="../workspaces/EmptyDate_WS/EmptyDateTest/WebContent/WEB-INF/wsdl/EmptyDateService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/root/WORK_DIR/workspaces/EmptyDate_WS/EmptyDateTest/WebContent/WEB-INF/wsdl/EmptyDateService.wsdl"><con:part><con:url>file:/root/WORK_DIR/workspaces/EmptyDate_WS/EmptyDateTest/WebContent/WEB-INF/wsdl/EmptyDateService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="EmptyDateService" targetNamespace="http://www.example.org/EmptyDateService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/EmptyDateService/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/EmptyDateService/">
+      <xsd:element name="EmptyDateRequest" type="xsd:string"/>
+      <xsd:element name="EmptyDateResponse" type="tns:EmptyDateResponse"/>
+      <xsd:complexType name="EmptyDateResponse">
+        <xsd:sequence>
+          <xsd:element name="emptyDate" type="xsd:date"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEmptyDateRequest">
+    <wsdl:part element="tns:EmptyDateRequest" name="emptyDateRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetEmptyDateResponse">
+    <wsdl:part element="tns:EmptyDateResponse" name="emptyDateResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="EmptyDateService">
+    <wsdl:operation name="GetEmptyDate">
+      <wsdl:input message="tns:GetEmptyDateRequest"/>
+      <wsdl:output message="tns:GetEmptyDateResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EmptyDateServiceSOAP" type="tns:EmptyDateService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetEmptyDate">
+      <soap:operation soapAction="http://www.example.org/EmptyDateService/GetEmptyDate"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmptyDateService">
+    <wsdl:port binding="tns:EmptyDateServiceSOAP" name="EmptyDateServiceSOAP">
+      <soap:address location="http://localhost:9080/EmptyDateWS/EmptyDateService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://ad66b7cfc51f:8088/mockEmptyDateServiceSOAP</con:endpoint><con:endpoint>http://localhost:9080/EmptyDateWS/EmptyDateService</con:endpoint></con:endpoints><con:operation id="27d51627-03b9-4e5f-b97c-c1adab910370" isOneWay="false" action="http://www.example.org/EmptyDateService/GetEmptyDate" name="GetEmptyDate" bindingOperationName="GetEmptyDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="43df95cf-a78f-44eb-8f3e-3df89d98038c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/EmptyDateWS/EmptyDateService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:emp="http://www.example.org/EmptyDateService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <emp:EmptyDateRequest>?</emp:EmptyDateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EmptyDateService/GetEmptyDate"/></con:call></con:operation></con:interface><con:testSuite id="61b18019-1952-4015-9331-fed2ac1941c2" name="EmptyDateServiceSOAP TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="d2f6df7f-6fda-42f9-8faa-57e77f566e32" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetEmptyDate TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e517751b-f291-4f63-a904-86eade170e81" name="GetEmptyDate"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EmptyDateServiceSOAP</con:interface><con:operation>GetEmptyDate</con:operation><con:request name="GetEmptyDate" id="236d344f-d526-4d44-9c1f-09a5e403471b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/EmptyDateWS/EmptyDateService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:emp="http://www.example.org/EmptyDateService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <emp:EmptyDateRequest>?</emp:EmptyDateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://www.example.org/EmptyDateService/GetEmptyDate"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="b7d1ae04-737f-450f-8231-67f483fd0801" port="8088" path="/mockEmptyDateServiceSOAP" host="ad66b7cfc51f" name="EmptyDateServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="GetEmptyDate" id="2abe878c-e62f-42ee-9268-bd880cb72cd1" interface="EmptyDateServiceSOAP" operation="GetEmptyDate"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="c600f6dd-b77c-4aea-a40a-76977f84dad5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:emp="http://www.example.org/EmptyDateService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <emp:EmptyDateResponse>
+         <emptyDate/>
+      </emp:EmptyDateResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EmptyDateService/GetEmptyDate"/></con:response><con:response name="Response 2" id="c600f6dd-b77c-4aea-a40a-76977f84dad5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:emp="http://www.example.org/EmptyDateService/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <emp:EmptyDateResponse>
+         <emptyDate>2019-05-04</emptyDate>
+      </emp:EmptyDateResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/EmptyDateService/GetEmptyDate"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

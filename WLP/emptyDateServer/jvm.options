@@ -1,0 +1,2 @@
+-Dempty.date.soap.url=http://192.168.69.120:8088/mockEmptyDateServiceSOAP
+-Dcom.ibm.xml.xlxp.jaxb.opti.level=0
