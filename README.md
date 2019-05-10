@@ -15,11 +15,16 @@ Use the following scripts as appropriate:
 
 Open the URL in a browser to test: http://localhost:9081/EmptyDateTest/TestEmptyDateService
 
-The mock service provides 2 different response.  One should return a valid date of 2019-05-04, the other should trigger the IllegalArgumentException.  Hit the browser page refresh button to cycle through the different responses.
+The mock service provides 2 different response.  One should return a valid date of 2019-05-04, the other should trigger the IllegalArgumentException.
 
 Behavior is consistent with 18.0.0.4 and 19.0.0.4
 
 ## tWAS
 WAR file provided for tWAS and tested against tWAS 8.5.5.13 with IBM SDK 8 (Docker Hub image).  The <emptyDate/> in the SOAP response results in a **null** object instead of the IllegalArgumentException.
 
+Simply deploy the */tWAS/EmptyDateTest.war* into a tWAS 8.5.5.x server and set the custom JVM property **empty.date.soap.url** to the SoapUI mock service URL.  
+
+Open the URL in a browser to test: http://<twas_hostname>:<twas_http_port>/EmptyDateTest/TestEmptyDateService
+
+## Notes:
 The WAR file contains source code for the test servlet.
